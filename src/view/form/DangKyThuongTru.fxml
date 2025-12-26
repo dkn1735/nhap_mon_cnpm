@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.form.DangKyThuongTruController">
+<TabPane prefHeight="600.0" prefWidth="900.0" styleClass="content-root" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.form.DangKyThuongTruController">
   <tabs>
     <Tab text="Hộ mới">
          <content>
@@ -29,8 +29,8 @@
                <bottom>
                   <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#dangKyHoMoi" prefWidth="100.0" text="Đăng ký" />
-                        <Button mnemonicParsing="false" onAction="#lamMoi" prefWidth="100.0" text="Làm mới" />
+                        <Button mnemonicParsing="false" onAction="#dangKyHoMoi" prefWidth="100.0" styleClass="content-button" text="Đăng ký" />
+                        <Button mnemonicParsing="false" onAction="#lamMoi" prefWidth="100.0" styleClass="content-button" text="Làm mới" />
                      </children>
                      <padding>
                         <Insets left="20.0" right="20.0" top="20.0" />
@@ -57,13 +57,13 @@
                                       </rowConstraints>
                                        <children>
                                           <Label text="Số hộ khẩu*:" />
-                                          <TextField fx:id="txtSoHKMoi" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                                          <TextField fx:id="txtSoHKMoi" styleClass="content-text-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
                                           <Label text="Địa chỉ*:" GridPane.rowIndex="1" />
-                                          <TextField fx:id="txtDiaChiMoi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtDiaChiMoi" styleClass="content-text-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                           <Label text="Ngày cả hộ chuyển đến*:" GridPane.rowIndex="2" />
                                           <DatePicker fx:id="dpNgayDenMoi" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                           <Label text="Nơi trước khi chuyển đến*:" GridPane.rowIndex="3" />
-                                          <TextField fx:id="txtNoiTrcKhiDenMoi" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="txtNoiTrcKhiDenMoi" styleClass="content-text-field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                        </children>
                                     </GridPane>
                                  </content>
@@ -72,7 +72,7 @@
                                  <content>
                                     <VBox alignment="CENTER" spacing="20.0">
                                        <children>
-                                          <TableView fx:id="tvDSNhanKhauMoi" editable="true" VBox.vgrow="ALWAYS">
+                                          <TableView fx:id="tvDSNhanKhauMoi" editable="true" styleClass="content-table" VBox.vgrow="ALWAYS">
                                             <columns>
                                               <TableColumn fx:id="colCCCDMoi" prefWidth="75.0" text="CCCD" />
                                               <TableColumn fx:id="colHotenMoi" prefWidth="75.0" text="Họ tên" />
@@ -121,8 +121,8 @@
                <bottom>
                   <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#nhapNKVaoHK" prefWidth="100.0" text="Đăng ký" />
-                        <Button mnemonicParsing="false" onAction="#lamMoi" prefWidth="100.0" text="Làm mới" />
+                        <Button mnemonicParsing="false" onAction="#nhapNKVaoHK" prefWidth="100.0" styleClass="content-button" text="Đăng ký" />
+                        <Button mnemonicParsing="false" onAction="#lamMoi" prefWidth="100.0" styleClass="content-button" text="Làm mới" />
                      </children>
                      <padding>
                         <Insets left="20.0" right="20.0" top="20.0" />
@@ -154,8 +154,8 @@
                                           <ComboBox fx:id="cbSoHKNhap" prefWidth="175.2" GridPane.columnIndex="1" />
                                           <Label text="Địa chỉ*:" GridPane.rowIndex="1" />
                                           <Label text="Tên chủ hộ*:" GridPane.rowIndex="2" />
-                                          <TextField fx:id="txtDiaChiNhap" disable="true" editable="false" prefWidth="175.2" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
-                                          <TextField fx:id="txtChuHoNhap" disable="true" editable="false" prefWidth="175.2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <TextField fx:id="txtDiaChiNhap" disable="true" editable="false" prefWidth="175.2" styleClass="content-text-field" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtChuHoNhap" disable="true" editable="false" prefWidth="175.2" styleClass="content-text-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                        </children>
                                     </GridPane>
                                  </content>
@@ -164,7 +164,7 @@
                                  <content>
                                     <VBox alignment="CENTER" spacing="20.0">
                                        <children>
-                                          <TableView fx:id="tvDSNhanKhauNhap" editable="true" VBox.vgrow="ALWAYS">
+                                          <TableView fx:id="tvDSNhanKhauNhap" editable="true" styleClass="content-table" VBox.vgrow="ALWAYS">
                                              <columns>
                                                 <TableColumn fx:id="colCCCDNhap" prefWidth="75.0" text="CCCD" />
                                                 <TableColumn fx:id="colHotenNhap" prefWidth="75.0" text="Họ tên" />
@@ -209,8 +209,8 @@
                <bottom>
                   <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#tachHo" prefWidth="100.0" text="Đăng ký" />
-                        <Button mnemonicParsing="false" onAction="#lamMoi" prefWidth="100.0" text="Làm mới" />
+                        <Button mnemonicParsing="false" onAction="#tachHo" prefWidth="100.0" styleClass="content-button" text="Đăng ký" />
+                        <Button mnemonicParsing="false" onAction="#lamMoi" prefWidth="100.0" styleClass="content-button" text="Làm mới" />
                      </children>
                      <padding>
                         <Insets left="20.0" right="20.0" top="20.0" />
@@ -241,8 +241,8 @@
                                                 <Label text="Số hộ khẩu mới*:" GridPane.rowIndex="1" />
                                                 <Label text="Địa chỉ mới*:" GridPane.rowIndex="2" />
                                                 <ComboBox fx:id="cbSoHoKhauTach" prefWidth="175.2" GridPane.columnIndex="1" />
-                                                <TextField fx:id="txtSoHoKhauTachMoi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <TextField fx:id="txtDiaChiTachMoi" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="txtSoHoKhauTachMoi" styleClass="content-text-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="txtDiaChiTachMoi" styleClass="content-text-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                              </children>
                                           </GridPane>
                                        </content>
@@ -251,7 +251,7 @@
                                        <content>
                                           <HBox alignment="CENTER" spacing="5.0">
                                              <children>
-                                                <TableView fx:id="tvNKHoCu" editable="true" HBox.hgrow="ALWAYS">
+                                                <TableView fx:id="tvNKHoCu" editable="true" styleClass="content-table" HBox.hgrow="ALWAYS">
                                                   <columns>
                                                     <TableColumn fx:id="colNKCu" prefWidth="75.0" text="Nhân khẩu hộ cũ" />
                                                     <TableColumn fx:id="colQHCu" prefWidth="75.0" text="Quan hệ với chủ hộ cũ" />
@@ -265,7 +265,7 @@
                                                       <Image url="@../image/9847392.png" />
                                                    </image>
                                                 </ImageView>
-                                                <TableView fx:id="tvNKHoMoi" editable="true" HBox.hgrow="ALWAYS">
+                                                <TableView fx:id="tvNKHoMoi" editable="true" styleClass="content-table" HBox.hgrow="ALWAYS">
                                                   <columns>
                                                     <TableColumn fx:id="colNKMoi" prefWidth="75.0" text="Nhân khẩu hộ mới" />
                                                     <TableColumn fx:id="colQHMoi" prefWidth="75.0" text="Quan hệ với chủ hộ mới" />

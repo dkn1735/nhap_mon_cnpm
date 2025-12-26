@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<TabPane prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PhiController">
+<TabPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" fx:controller="controller.PhiController" styleClass="content-root">
   <tabs>
     <Tab text="Tạo phí">
          <content>
@@ -29,8 +29,8 @@
                <bottom>
                   <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#dangKy" prefWidth="100.0" text="Đăng ký" />
-                        <Button mnemonicParsing="false" onAction="#lamMoi" prefWidth="100.0" text="Làm mới" />
+                        <Button mnemonicParsing="false" onAction="#dangKy" prefWidth="100.0" text="Đăng ký" styleClass="content-button" />
+                        <Button mnemonicParsing="false" onAction="#lamMoi" prefWidth="100.0" text="Làm mới" styleClass="content-button" />
                      </children>
                      <padding>
                         <Insets left="20.0" right="20.0" top="20.0" />
@@ -59,10 +59,10 @@
                               <Label text="Tên phí*:" GridPane.rowIndex="1" />
                               <Label text="Loại phí*:" GridPane.rowIndex="2" />
                               <Label text="Mức thu trên một nhân khẩu:" GridPane.rowIndex="3" />
-                              <TextField fx:id="textMaPhi" GridPane.columnIndex="1" />
-                              <TextField fx:id="textTenPhi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="textMaPhi" GridPane.columnIndex="1" styleClass="content-text-field" />
+                              <TextField fx:id="textTenPhi" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="content-text-field" />
                               <ComboBox fx:id="cbLoaiPhi" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField fx:id="textMucThu" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="textMucThu" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="content-text-field" />
                            </children>
                         </GridPane>
                      </children>
@@ -78,8 +78,8 @@
                      <top>
                         <HBox alignment="CENTER_RIGHT" spacing="20.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#timKiemPhi" prefWidth="100.0" text="Tìm kiếm" />
-                              <TextField fx:id="textTimKiemPhi" prefWidth="200.0" promptText="Điền thông tin tìm kiếm" />
+                              <Button mnemonicParsing="false" onAction="#timKiemPhi" prefWidth="100.0" text="Tìm kiếm" styleClass="content-button" />
+                              <TextField fx:id="textTimKiemPhi" prefWidth="200.0" promptText="Điền thông tin tìm kiếm" styleClass="content-text-field" />
                            </children>
                            <padding>
                               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -87,7 +87,7 @@
                         </HBox>
                      </top>
                      <center>
-                        <TableView fx:id="tvDSPhi" onMouseClicked="#xemChiTietPhi" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <TableView fx:id="tvDSPhi" onMouseClicked="#xemChiTietPhi" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" styleClass="content-table">
                           <columns>
                             <TableColumn fx:id="colMaPhi" prefWidth="75.0" text="Mã phí" />
                             <TableColumn fx:id="colTenPhi" prefWidth="75.0" text="Tên phí" />
@@ -123,14 +123,14 @@
                                           <Insets left="10.0" />
                                        </padding>
                                     </HBox>
-                                    <Button mnemonicParsing="false" onAction="#timKiemThuPhi" prefWidth="100.0" text="Tìm kiếm" />
-                                    <TextField fx:id="textTimKiemThuPhi" prefWidth="200.0" promptText="Điền thông tin tìm kiếm" />
+                                    <Button mnemonicParsing="false" onAction="#timKiemThuPhi" prefWidth="100.0" text="Tìm kiếm" styleClass="content-button" />
+                                    <TextField fx:id="textTimKiemThuPhi" prefWidth="200.0" promptText="Điền thông tin tìm kiếm" styleClass="content-text-field" />
                                  </children>
                                  <padding>
                                     <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
                                  </padding>
                               </HBox>
-                              <TableView fx:id="tvDSThuPhi" editable="true" VBox.vgrow="ALWAYS">
+                              <TableView fx:id="tvDSThuPhi" editable="true" VBox.vgrow="ALWAYS" styleClass="content-table">
                                  <columns>
                                     <TableColumn fx:id="colSoHoKhau" prefWidth="75.0" text="Số hộ khẩu" />
                                     <TableColumn fx:id="colCCCD" prefWidth="75.0" text="CCCD" />
