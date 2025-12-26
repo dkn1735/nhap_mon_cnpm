@@ -71,9 +71,9 @@ public class DangNhap_DangKyController implements Initializable {
             showAlert(AlertType.INFORMATION, "Thành công", "Đăng nhập thành công!");
             // TODO: Chuyển sang màn hình chính (ví dụ: load scene khác)
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Main.fxml"));
+            Parent root = loader.load();
             MainController controller = loader.getController();
             controller.setCanBo(canBo);
-            Parent root = loader.load();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setMaximized(true);

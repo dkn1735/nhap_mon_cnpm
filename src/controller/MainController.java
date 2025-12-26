@@ -1,5 +1,6 @@
 package controller;
 
+import controller.form.DoiMatKhauController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.CanBo;
 
@@ -93,7 +95,20 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void doiMatKhau(ActionEvent event) {
+    private void doiMatKhau(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/form/DoiMatKhau.fxml"));
+        Parent root = loader.load();
+        DoiMatKhauController controller = loader.getController();
+        controller.setCanBo(canBo);
+
+        Stage stage = new Stage();
+        stage.setTitle("Đổi mật khẩu");
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(mbCanBo.getScene().getWindow());
+
+        stage.showAndWait();
     }
 
     @FXML

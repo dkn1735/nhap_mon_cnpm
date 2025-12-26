@@ -34,11 +34,25 @@ public class CanBoDAO {
     public static boolean register(CanBo canBo) {
         String sql = "INSERT INTO CanBo (taiKhoan, matKhau, tenCanBo, chucVu) VALUES (?, ?, ?, ?)";
         try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+            PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, canBo.getTaiKhoan());
             ps.setString(2, canBo.getMatKhau());
             ps.setString(3, canBo.getTenCanBo());
             ps.setString(4, canBo.getChucVu());
+            int rowsAffected = ps.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean update(CanBo canBo) {
+        String sql = "UPDATE CanBo SET matKhau = ? WHERE taiKhoan = ?";
+        try (Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, canBo.getMatKhau());
+            ps.setString(2, canBo.getTaiKhoan());
             int rowsAffected = ps.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {

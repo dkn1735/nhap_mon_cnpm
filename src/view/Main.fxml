@@ -15,7 +15,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <top>
-        <HBox alignment="CENTER_LEFT" prefHeight="60" spacing="15" styleClass="top-bar" BorderPane.alignment="CENTER">
+        <HBox alignment="CENTER_RIGHT" prefHeight="60" spacing="15" styleClass="top-bar" BorderPane.alignment="CENTER">
 
             <!-- Menu icon -->
             <ImageView fitHeight="20" fitWidth="20">
@@ -36,14 +36,7 @@
             <!-- Đẩy phần tài khoản sang phải -->
             <Region HBox.hgrow="ALWAYS" />
 
-            <MenuButton fx:id="mbCanBo" styleClass="account-button">
-                <graphic>
-                    <ImageView fitHeight="24" fitWidth="24">
-                        <image>
-                            <Image url="@image/TaiKhoan.png" />
-                        </image>
-                    </ImageView>
-                </graphic>
+            <MenuButton fx:id="mbCanBo" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" styleClass="account-button" HBox.hgrow="ALWAYS">
                 <items>
                     <MenuItem onAction="#doiMatKhau" text="Đổi mật khẩu" />
                     <MenuItem onAction="#dangXuat" text="Đăng xuất" />
