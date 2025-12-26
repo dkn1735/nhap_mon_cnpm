@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NhanKhauController">
+  <tabs>
+    <Tab text="Thường trú">
+         <content>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <BorderPane fx:id="paneDSThuongTru" prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tvDSThuongTru" editable="true" onMouseClicked="#xemChiTietThuongTru" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="colCCCDThuongTru" prefWidth="75.0" text="CCCD" />
+                            <TableColumn fx:id="colHoTenThuongTru" prefWidth="75.0" text="Họ tên" />
+                              <TableColumn fx:id="colGioiTinhThuongTru" prefWidth="75.0" text="Giới tính" />
+                              <TableColumn fx:id="colBiDanhThuongTru" prefWidth="75.0" text="Bí danh" />
+                              <TableColumn fx:id="colNgaySinhThuongTru" prefWidth="75.0" text="Ngày sinh" />
+                              <TableColumn fx:id="colQueQuanThuongTru" prefWidth="75.0" text="Quê quán" />
+                              <TableColumn fx:id="colDanTocThuongTru" prefWidth="75.0" text="Dân tộc" />
+                              <TableColumn fx:id="colTonGiaoThuongTru" prefWidth="75.0" text="Tôn giáo" />
+                              <TableColumn fx:id="colNgheNghiepThuongTru" prefWidth="75.0" text="Nghề nghiệp" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox alignment="CENTER_RIGHT" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#timKiemThuongTru" prefWidth="100.0" text="Tìm kiếm" />
+                              <TextField fx:id="textTimKiemThuongTru" prefWidth="200.0" promptText="Điền thông tin tìm kiếm" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+                  <BorderPane fx:id="paneChiTietThuongTru" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <top>
+                        <HBox BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#quayLaiDSThuongTru" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Quay lại danh sách thường trú">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@image/12029023.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" right="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </top>
+                     <bottom>
+                        <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#chinhSuaThuongTru" prefWidth="100.0" text="Chỉnh sửa" />
+                              <Button mnemonicParsing="false" onAction="#xoaThuongTru" prefWidth="100.0" text="Xóa" />
+                           </children>
+                           <padding>
+                              <Insets left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </bottom>
+                     <center>
+                        <VBox spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TitledPane text="Thông tin nhân khẩu" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true">
+                                       <content>
+                                          <GridPane vgap="10.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="175.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints vgrow="ALWAYS" />
+                                              <RowConstraints vgrow="ALWAYS" />
+                                              <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="CCCD*:" />
+                                                <Label text="Họ tên*:" GridPane.rowIndex="1" />
+                                                <Label text="Giới tính*:" GridPane.rowIndex="2" />
+                                                <Label text="Bí danh:" GridPane.rowIndex="3" />
+                                                <Label text="Ngày sinh*:" GridPane.rowIndex="4" />
+                                                <Label text="Quê quán*:" GridPane.rowIndex="5" />
+                                                <Label text="Dân tộc*:" GridPane.rowIndex="6" />
+                                                <Label text="Tôn giáo:" GridPane.rowIndex="7" />
+                                                <Label text="Nghề nghiệp:" GridPane.rowIndex="8" />
+                                                <TextField fx:id="textCCCDThuongTru" GridPane.columnIndex="1" />
+                                                <TextField fx:id="textHoTenThuongTru" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="textGioiTinhThuongTru" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="textBiDanhThuongTru" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="textQueQuanThuongTru" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <TextField fx:id="textDanTocThuongTru" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <TextField fx:id="textTonGiaoThuongTru" layoutX="452.0" layoutY="254.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <TextField fx:id="textNgheNghiepThuongTru" layoutX="452.0" layoutY="290.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                <DatePicker fx:id="dpNgaySinhThuongTru" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                             </children>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane text="Thông tin thường trú" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true">
+                                       <content>
+                                          <GridPane vgap="10.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="175.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints vgrow="ALWAYS" />
+                                              <RowConstraints vgrow="ALWAYS" />
+                                              <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="Số hộ khẩu*:" />
+                                                <Label text="Quan hệ chủ hộ*:" GridPane.rowIndex="1" />
+                                                <Label text="Ngày chuyển đến*:" GridPane.rowIndex="2" />
+                                                <Label text="Nơi trước khi chuyển đến*:" GridPane.rowIndex="3" />
+                                                <Label text="Ngày chuyển đi:" GridPane.rowIndex="4" />
+                                                <Label text="Nơi chuyển đi:" GridPane.rowIndex="5" />
+                                                <TextField fx:id="textSoHoKhau" GridPane.columnIndex="1" />
+                                                <TextField fx:id="textNoiTrcKhiDen" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="textQHChuHo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="textNoiChuyenDi" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <DatePicker fx:id="dpNgayChuyenDen" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <DatePicker fx:id="dpNgayChuyenDi" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                             </children>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+            </StackPane>
+         </content></Tab>
+    <Tab text="Tạm trú">
+         <content>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <BorderPane fx:id="paneDSTamTru" prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tvDSTamTru" editable="true" onMouseClicked="#xemChiTietTamTru" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="colCCCDTamTru" prefWidth="75.0" text="CCCD" />
+                              <TableColumn fx:id="colHoTenTamTru" prefWidth="75.0" text="Họ tên" />
+                              <TableColumn fx:id="colGioiTinhTamTru" prefWidth="75.0" text="Giới tính" />
+                              <TableColumn fx:id="colBiDanhTamTru" prefWidth="75.0" text="Bí danh" />
+                              <TableColumn fx:id="colNgaySinhTamTru" prefWidth="75.0" text="Ngày sinh" />
+                              <TableColumn fx:id="colQueQuanTamTru" prefWidth="75.0" text="Quê quán" />
+                              <TableColumn fx:id="colDanTocTamtru" prefWidth="75.0" text="Dân tộc" />
+                              <TableColumn fx:id="colTonGiaoTamTru" prefWidth="75.0" text="Tôn giáo" />
+                              <TableColumn fx:id="colNgheNghiepTamTru" prefWidth="75.0" text="Nghề nghiệp" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox alignment="CENTER_RIGHT" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#timKiemTamTru" prefWidth="100.0" text="Tìm kiếm" />
+                              <TextField fx:id="textTimKiemTamTru" prefWidth="200.0" promptText="Điền thông tin tìm kiếm" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+                  <BorderPane fx:id="paneChiTietTamTru" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <top>
+                        <HBox BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#quayLaiDSTamTru" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Quay lại danh sách tạm trú">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@image/12029023.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" right="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </top>
+                     <bottom>
+                        <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#chinhSuaTamTru" prefWidth="100.0" text="Chỉnh sửa" />
+                              <Button mnemonicParsing="false" onAction="#ketThucTamTru" prefWidth="100.0" text="Kết thúc" />
+                           </children>
+                           <padding>
+                              <Insets left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </bottom>
+                     <center>
+                        <VBox spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TitledPane text="Thông tin nhân khẩu" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true">
+                                       <content>
+                                          <GridPane vgap="10.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="175.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label text="CCCD*:" />
+                                                <Label text="Họ tên*:" GridPane.rowIndex="1" />
+                                                <Label text="Giới tính*:" GridPane.rowIndex="2" />
+                                                <Label text="Bí danh:" GridPane.rowIndex="3" />
+                                                <Label text="Ngày sinh*:" GridPane.rowIndex="4" />
+                                                <Label text="Quê quán*:" GridPane.rowIndex="5" />
+                                                <Label text="Dân tộc*:" GridPane.rowIndex="6" />
+                                                <Label text="Tôn giáo:" GridPane.rowIndex="7" />
+                                                <Label text="Nghề nghiệp:" GridPane.rowIndex="8" />
+                                                <TextField fx:id="textCCCDTamTru" GridPane.columnIndex="1" />
+                                                <TextField fx:id="textHoTenTamTru" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="textGioiTinhTamTru" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="textBiDanhTamTru" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="textQueQuanTamTru" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <TextField fx:id="textDanTocTamTru" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <TextField fx:id="textTonGiaoTamTru" layoutX="452.0" layoutY="254.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <TextField fx:id="textNgheNghiepTamTru" layoutX="452.0" layoutY="290.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                <DatePicker fx:id="dpNgaySinhTamTru" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                             </children>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane text="Thông tin tạm trú" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true">
+                                       <content>
+                                          <GridPane vgap="10.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="175.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label text="Mã tạm trú*:" />
+                                                <Label text="Ngày bắt đầu*:" GridPane.rowIndex="3" />
+                                                <Label text="Ngày kết thúc*:" GridPane.rowIndex="4" />
+                                                <TextField fx:id="textMaTamTru" GridPane.columnIndex="1" />
+                                                <DatePicker fx:id="dpNgayBatDauTamTru" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <DatePicker fx:id="dpNgayKetThucTamTru" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Nơi tạm trú*:" GridPane.rowIndex="1" />
+                                                <TextField fx:id="textNoiTamTru" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="Lý do tạm trú*:" GridPane.rowIndex="2" />
+                                                <TextField fx:id="textLyDoTamTru" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                             </children>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+            </StackPane>
+         </content></Tab>
+      <Tab text="Tạm vắng">
+         <content>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <BorderPane fx:id="paneDSTamVang" prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="tvDSTamVang" editable="true" onMouseClicked="#xemChiTietTamVang" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="colCCCDTamVang" prefWidth="75.0" text="CCCD" />
+                              <TableColumn fx:id="colHoTenTamVang" prefWidth="75.0" text="Họ tên" />
+                              <TableColumn fx:id="colGioiTinhTamVang" prefWidth="75.0" text="Giới tính" />
+                              <TableColumn fx:id="colBiDanhTamVang" prefWidth="75.0" text="Bí danh" />
+                              <TableColumn fx:id="colNgaySinhTamVang" prefWidth="75.0" text="Ngày sinh" />
+                              <TableColumn fx:id="colQueQuanTamVang" prefWidth="75.0" text="Quê quán" />
+                              <TableColumn fx:id="colDanTocTamVang" prefWidth="75.0" text="Dân tộc" />
+                              <TableColumn fx:id="colTonGiaoTamVang" prefWidth="75.0" text="Tôn giáo" />
+                              <TableColumn fx:id="colNgheNghiepTamVang" prefWidth="75.0" text="Nghề nghiệp" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox alignment="CENTER_RIGHT" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#timKiemTamVang" prefWidth="100.0" text="Tìm kiếm" />
+                              <TextField fx:id="textTimKiemTamVang" prefWidth="200.0" promptText="Điền thông tin tìm kiếm" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+                  <BorderPane fx:id="paneChiTietTamVang" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <top>
+                        <HBox BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#quayLaiDSTamVang" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Quay lại danh sách tạm vắng">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@image/12029023.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" right="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </top>
+                     <bottom>
+                        <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#chinhSuaTamVang" prefWidth="100.0" text="Chỉnh sửa" />
+                              <Button mnemonicParsing="false" onAction="#ketThucTamVang" prefWidth="100.0" text="Kết thúc" />
+                           </children>
+                           <padding>
+                              <Insets left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </bottom>
+                     <center>
+                        <VBox spacing="20.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TitledPane prefWidth="200.0" text="Thông tin nhân khẩu" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true">
+                                       <content>
+                                          <GridPane vgap="10.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="175.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label text="CCCD*:" />
+                                                <Label text="Họ tên*:" GridPane.rowIndex="1" />
+                                                <Label text="Giới tính*:" GridPane.rowIndex="2" />
+                                                <Label text="Bí danh:" GridPane.rowIndex="3" />
+                                                <Label text="Ngày sinh*:" GridPane.rowIndex="4" />
+                                                <Label text="Quê quán*:" GridPane.rowIndex="5" />
+                                                <Label text="Dân tộc*:" GridPane.rowIndex="6" />
+                                                <Label text="Tôn giáo:" GridPane.rowIndex="7" />
+                                                <Label text="Nghề nghiệp:" GridPane.rowIndex="8" />
+                                                <TextField fx:id="textCCCDTamVang" GridPane.columnIndex="1" />
+                                                <TextField fx:id="textHoTenTamVang" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="textGioiTinhTamVang" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="textBiDanhTamVang" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="textQueQuanTamVang" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                <TextField fx:id="textDanTocTamVang" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <TextField fx:id="textTonGiaoTamVang" layoutX="452.0" layoutY="254.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                <TextField fx:id="textNgheNghiepTamVang" layoutX="452.0" layoutY="290.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                <DatePicker fx:id="dpNgaySinhTamVang" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                             </children>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane text="Thông tin tạm trú" VBox.vgrow="ALWAYS">
+                                 <content>
+                                    <ScrollPane fitToHeight="true" fitToWidth="true">
+                                       <content>
+                                          <GridPane vgap="10.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="175.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                                <RowConstraints vgrow="ALWAYS" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label text="Mã tạm vắng*:" />
+                                                <Label text="Ngày bắt đầu*:" GridPane.rowIndex="3" />
+                                                <Label text="Ngày kết thúc*:" GridPane.rowIndex="4" />
+                                                <TextField fx:id="textMaTamVang" GridPane.columnIndex="1" />
+                                                <DatePicker fx:id="dpNgayBatDauTamVang" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <DatePicker fx:id="dpNgayKetThucTamVang" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Label text="Nơi tạm vắng*:" GridPane.rowIndex="1" />
+                                                <TextField fx:id="textNoiTamVang" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label text="Lý do tạm vắng*:" GridPane.rowIndex="2" />
+                                                <TextField fx:id="textLyDoTamVang" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                             </children>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+               </children>
+            </StackPane>
+         </content></Tab>
+  </tabs>
+</TabPane>
