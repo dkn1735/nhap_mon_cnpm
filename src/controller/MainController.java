@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +16,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -22,7 +24,8 @@ import javafx.stage.Stage;
 import model.CanBo;
 
 public class MainController implements Initializable {
-
+    @FXML
+    private VBox sidebar;
     @FXML
     private Label arrowGiayTo;
     @FXML
@@ -30,6 +33,10 @@ public class MainController implements Initializable {
     private boolean giayToExpanded = false;
     @FXML
     private Pane contentPane;
+    @FXML private HBox menuNhanKhau;
+    @FXML private HBox menuHoKhau;
+    @FXML private VBox menuGiayTo;
+    @FXML private HBox menuThuPhi;
     @FXML
     private MenuButton mbCanBo;
     private CanBo canBo;
@@ -43,6 +50,18 @@ public class MainController implements Initializable {
             System.getLogger(MainController.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
     }    
+    @FXML
+    private void toggleSidebar(MouseEvent event) {
+        boolean isVisible = sidebar.isVisible();
+
+        if (isVisible) {
+            sidebar.setVisible(false);
+            sidebar.setManaged(false);
+        } else {
+            sidebar.setVisible(true);
+            sidebar.setManaged(true);
+        }
+    }
 
     @FXML
     private void toggleGiayTo(MouseEvent event) {
@@ -90,7 +109,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void loadTrangChu(ActionEvent event) throws IOException {
+    private void loadTrangChu(Event event) throws IOException {
         loadView("/view/TrangChu.fxml");
     }
 
@@ -134,5 +153,26 @@ public class MainController implements Initializable {
     public void setCanBo(CanBo canBo) {
         this.canBo = canBo;
         mbCanBo.setText(canBo.getChucVu() + " - " + canBo.getTenCanBo());
+
+        String chucVu = canBo.getChucVu();
+
+        hienThiMenu(menuNhanKhau, true);
+        hienThiMenu(menuHoKhau, true);
+        hienThiMenu(menuGiayTo, true);
+        hienThiMenu(menuThuPhi, true);
+
+        if ("Tổ phó".equals(chucVu)) {
+            hienThiMenu(menuThuPhi, false);
+        } 
+        else if ("Kế toán".equals(chucVu)) {
+            hienThiMenu(menuNhanKhau, false);
+            hienThiMenu(menuHoKhau, false);
+            hienThiMenu(menuGiayTo, false);
+        }
+    }
+
+    private void hienThiMenu(javafx.scene.layout.Pane menu, boolean isVisible) {
+        menu.setVisible(isVisible);
+        menu.setManaged(isVisible);
     }
 }

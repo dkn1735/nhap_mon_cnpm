@@ -13,25 +13,29 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <top>
         <HBox alignment="CENTER_RIGHT" prefHeight="60" spacing="15" styleClass="top-bar" BorderPane.alignment="CENTER">
-
             <!-- Menu icon -->
-            <ImageView fitHeight="20" fitWidth="20">
+            <ImageView fitHeight="20" fitWidth="20" onMouseClicked="#toggleSidebar" style="-fx-cursor: hand;">
                 <image>
                     <Image url="@image/2976215.png" />
                 </image>
             </ImageView>
 
             <!-- Logo -->
-            <ImageView fitHeight="40" preserveRatio="true">
-                <image>
-                    <Image url="@image/huy-hieu-cong-an-nhan.png" />
-                </image>
-            </ImageView>
-
-            <Label styleClass="top-title" text="QUẢN LÝ CƯ TRÚ" />
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#loadTrangChu" spacing="10" style="-fx-cursor: hand;">
+               <children>
+                  <ImageView fitHeight="40" preserveRatio="true">
+                      <image>
+                          <Image url="@image/huy-hieu-cong-an-nhan.png" />
+                      </image>
+                  </ImageView>
+      
+                  <Label styleClass="top-title" text="QUẢN LÝ CƯ TRÚ" />
+               </children>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS" />
 
             <!-- Đẩy phần tài khoản sang phải -->
             <Region HBox.hgrow="ALWAYS" />
@@ -47,7 +51,7 @@
     </top>
 
    <left>
-        <VBox prefWidth="220" spacing="10" styleClass="sidebar" BorderPane.alignment="CENTER">
+        <VBox fx:id="sidebar" prefWidth="220" spacing="10" styleClass="sidebar" BorderPane.alignment="CENTER">
 
             <!-- Trang chủ -->
             <HBox alignment="CENTER_LEFT" spacing="15" styleClass="menu-item">
@@ -60,7 +64,7 @@
             </HBox>
 
             <!-- Nhân khẩu -->
-            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="menu-item">
+            <HBox fx:id="menuNhanKhau" alignment="CENTER_LEFT" spacing="15" styleClass="menu-item">
                 <ImageView fitHeight="18" fitWidth="18">
                     <image>
                         <Image url="@image/1769059.png" />
@@ -70,7 +74,7 @@
             </HBox>
 
             <!-- Hộ khẩu -->
-            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="menu-item">
+            <HBox fx:id="menuHoKhau" alignment="CENTER_LEFT" spacing="15" styleClass="menu-item">
                 <ImageView fitHeight="18" fitWidth="18">
                     <image>
                         <Image url="@image/18995545.png" />
@@ -80,7 +84,7 @@
             </HBox>
 
             <!-- ĐK giấy tờ -->
-            <VBox spacing="5">
+            <VBox fx:id="menuGiayTo" spacing="5">
 
                 <!-- MENU CHA -->
                 <HBox alignment="CENTER_LEFT" onMouseClicked="#toggleGiayTo" spacing="15" styleClass="menu-item">
@@ -106,16 +110,17 @@
 
                 </VBox>
             </VBox>
-         <HBox alignment="CENTER_LEFT" spacing="15" styleClass="menu-item">
-            <children>
-               <ImageView fitHeight="18" fitWidth="18">
-                  <image>
-                     <Image url="@image/6344008.png" />
-                  </image>
-               </ImageView>
-               <Button onAction="#loadPhi" styleClass="menu-button" text="Thu phí" />
-            </children>
-         </HBox>
+            <!-- Thu Phí -->
+            <HBox fx:id="menuThuPhi" alignment="CENTER_LEFT" spacing="15" styleClass="menu-item">
+                <children>
+                    <ImageView fitHeight="18" fitWidth="18">
+                        <image>
+                            <Image url="@image/6344008.png" />
+                        </image>
+                    </ImageView>
+                    <Button onAction="#loadPhi" styleClass="menu-button" text="Thu phí" />
+                </children>
+            </HBox>
         </VBox>
     </left>
    <center>

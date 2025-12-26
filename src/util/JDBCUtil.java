@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class JDBCUtil {
     public static Connection getConnection() throws SQLException {
         // Thông tin kết nối
-        String url = "jdbc:sqlserver://SHERRY:1433;databaseName=du_lieu_cu_tru;encryp=false;trustServerCertificate=true;";
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=du_lieu_cu_tru;encrypt=false;trustServerCertificate=true;";
         String user = "sa";        // tên user SQL Server
         String password = "123456"; // mật khẩu SQL Server
         
