@@ -5,10 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import util.JDBCUtil;
 
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
+        JDBCUtil.createDatabaseIfNotExists();
+        JDBCUtil.createTablesIfNotExists();
+        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DangNhap_DangKy.fxml"));
         Parent root = loader.load();
         DangNhap_DangKyController controller = loader.getController();
